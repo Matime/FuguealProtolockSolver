@@ -1,0 +1,14 @@
+#errorMessage{
+    font-weight:bold;
+    color:red;
+  }
+  .resultsTable td{
+    width:15px;
+    height:15px;
+    border:1px solid black;
+  }
+  .inputTable td{
+    border:1px solid black;
+    width:200px;
+    height:200px;
+  }

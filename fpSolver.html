@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="fpSolver.css"/>
+<table class="inputTable">
+    <tr>
+        <td id="inputTd1"></td>
+        <td id="inputTd2"></td>
+        <td id="inputTd3"></td>
+    </tr>
+    <tr>
+        <td id="inputTd4"></td>
+        <td id="inputTd5"></td>
+        <td id="inputTd6"></td>
+    </tr>
+    <tr>
+        <td id="inputTd7"></td>
+        <td id="inputTd8"></td>
+        <td id="inputTd9"></td>
+    </tr>
+</table>
+
+example input:
+<div>
+h1t2/h2t1/s1s1
+<br/>
+s2t2/h1c3/s2c2
+<br/>
+c2t3/h1s1/s3t3
+<br/>
+<br/>
+example input2 (>3 sets):
+<br/>  
+c3t1/c2c3/c1s2
+<br/>  
+c3c1/c1c2/s2c3
+<br/>  
+c2s1/s1c1/h3t1
+<br/>  
+<br/>
+
+
+
+h1t2-> 1 hexagon border, 2 triangle cores
+<br/>
+s2c3-> 2 square borders, 2 circle cores
+</div>
+<textarea id="myTextArea">
+h3c3/h3t1/s3t1
+h3t2/c3t2/h3c1
+s3s3/h3t3/c3s2
+</textarea>
+<button id="myButton">
+Solve
+</button>
+<div id="errorMessage">
+
+</div>
+<template type="html" id="tdTemplate">
+    <div>
+        <label>Border Type</label>
+        <select id="bt${num}" class="borderTypeSelector" onchange="UpdateInputTextArea()">
+            <option value="c">Circle</option>
+            <option value="s">Square</option>
+            <option value="h">Hex</option>
+        </select>
+    </div>
+    <div>
+        <label>Border Count</label>
+        <select id="bc${num}" class="borderCountSelector" onchange="UpdateInputTextArea()">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    <div>
+        <label>Core Type</label>
+        <select id="ct${num}" class="coreTypeSelector" onchange="UpdateInputTextArea()">
+            <option value="c">Circle</option>
+            <option value="t">Triangle</option>
+            <option value="s">Square</option>
+        </select>
+    </div>
+    <div>
+        <label>Core Count</label>
+        <select id="cc${num}" class="coreCountSelector" onchange="UpdateInputTextArea()">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+</template>
+<script type="text/javascript" src="fpSolver.js"></script>
